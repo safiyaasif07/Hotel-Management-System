@@ -86,6 +86,11 @@ ID Customer Room Check-In Check-Out Payment Request Status
 
 1 John Doe 101 2025-09-15 2025-09-20 Paid Extra bed Active
 
+
 License
 
 This project is licensed under the MIT License – see the LICENSE file for details.
+
+Output of the program:
+
+<img width="1872" height="841" alt="image" src="https://github.com/user-attachments/assets/9abbb6c6-fa84-4c8d-8b94-151b32db9702" />
