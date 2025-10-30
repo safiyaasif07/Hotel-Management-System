@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% if edit %}Edit{% else %}Add{% endif %} Booking</title>
     <style>
       body {
@@ -89,6 +90,13 @@
 
         <label>Payment Status:</label>
         <select name="payment_status">
+        <input type="date" name="check_in" value="{{ booking[3] if edit else '' }}" required title="Select check-in date" placeholder="Select check-in date" />
+
+        <label>Check-Out:</label>
+        <input type="date" name="check_out" value="{{ booking[4] if edit else '' }}" required title="Select check-out date" placeholder="Select check-out date" />
+
+        <label for="payment_status">Payment Status:</label>
+        <select name="payment_status" id="payment_status">
           <option value="Pending" {% if edit and booking[5]=='Pending' %}selected{% endif %}>Pending</option>
           <option value="Paid" {% if edit and booking[5]=='Paid' %}selected{% endif %}>Paid</option>
         </select>
@@ -100,14 +108,14 @@
           placeholder="E.g. Extra bed, Late checkout"
           value="{{ booking[6] if edit else '' }}"
         />
-
         <label>Status:</label>
         <select name="status">
+        <label for="status">Status:</label>
+        <select name="status" id="status">
           <option value="Active" {% if edit and booking[7]=='Active' %}selected{% endif %}>Active</option>
           <option value="Completed" {% if edit and booking[7]=='Completed' %}selected{% endif %}>Completed</option>
           <option value="Cancelled" {% if edit and booking[7]=='Cancelled' %}selected{% endif %}>Cancelled</option>
         </select>
-
         <button type="submit" class="btn">{% if edit %}Update{% else %}Save{% endif %} Booking</button>
       </form>
     </div>
